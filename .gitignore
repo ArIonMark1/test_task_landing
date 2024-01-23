@@ -1,0 +1,15 @@
+node_modules/
+jspm_packages/
+/packages
+
+.npm
+
+.env
+.env.test
+
+.cache
+
+indexTest.html
+styles/styleTest.css
+js/jsTest.js
+images/testImg/
