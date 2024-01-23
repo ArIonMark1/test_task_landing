@@ -1,0 +1,58 @@
+.top-header {
+  display: flex;
+  padding: 12px 0;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid teal;
+  .input-block {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    // border: 1px solid rgb(151, 17, 161);
+    .search-svg {
+      width: 12px;
+      height: 12px;
+      left: 8px;
+      position: absolute;
+      align-self: center;
+      fill: transparent;
+      stroke: $button-color;
+    }
+    .clear-svg {
+      position: absolute;
+      fill: transparent;
+      stroke: $button-color;
+      align-self: center;
+      right: 8px;
+      width: 8px;
+      height: 8px;
+    }
+    .search-instrument {
+      width: 100%;
+      padding: 5px 18px 5px 28px;
+      background-color: $main-bg-color;
+      border: 1px solid $hold-color;
+
+      &::placeholder {
+        display: inline-block;
+        height: 100px;
+        padding-top: 0;
+        top: -15px;
+        font-size: 10px;
+        color: $placeholder-color;
+        outline: 1px solid hotpink;
+        align-self: center;
+      }
+      ::-webkit-input-placeholder {
+        text-align: center;
+        align-items: center;
+        align-self: center;
+        color: aquamarine;
+      }
+    }
+  }
+
+  .currency-rating {
+  }
+}

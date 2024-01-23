@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* .open-popup {
+  font-family: inherit;
+  display: flex;
+  padding: 15px 35px;
+  border-radius: 4px;
+  border: 1px solid var(--strong-buy-color);
+  background: transparent;
+  color: var(--strong-buy-color);
+} */
+
+/* ################################### */
+.popup {
+  display: block;
+  position: fixed;
+  /* position: fixed; */
+  top: 0;
+  min-width: 100%;
+  height: 100%;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 13px 16px;
+  border: 1px solid #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* ################################################### */
+#lineContainer {
+  position: relative;
+  width: 100px;
+  height: 1px;
+
+  align-self: center;
+  background: linear-gradient(
+    to right,
+    #3498db 50.5%,
+    transparent 50.5%,
+    transparent 51%,
+    #2ecc71 51%
+  );
+  background-size: 120% 100%;
+  border-radius: 2px;
+}
+
+#slider {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: tomato;
+  border-radius: 50%;
+  top: -2px;
+  transition: left 0.3s ease; /* Додали анімацію для плавної зміни положення */
+}

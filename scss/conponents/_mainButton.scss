@@ -1,0 +1,15 @@
+.open-popup {
+  font-family: inherit;
+  display: flex;
+  padding: 15px 35px;
+  border-radius: 4px;
+  border: 1px solid $strong-buy-color;
+  background: transparent;
+  color: $strong-buy-color;
+}
+// $someColor: #fafafa; // створення змінної
+// .block:not(.first){
+//      background-color: $someColor; використання змінної
+// } вибере всі блоки у яких немає класу first
+//
+//

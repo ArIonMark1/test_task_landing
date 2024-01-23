@@ -1,0 +1,21 @@
+<svg 
+    version="1.1" 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="1024" 
+    height="1024" 
+    viewBox="0 0 1024 1024">
+    <symbol id="closeSvg" viewBox="0 0 1024 1024">
+        <title></title>
+        <g id="icomoon-ignore">
+        </g>
+        <path 
+
+            stroke-linejoin="miter" 
+            stroke-linecap="round" 
+            stroke-miterlimit="4" 
+            stroke-width="128" 
+
+            d="M841.984 842.112l-660.096-660.096M841.984 182.016l-660.096 660.096">
+        </path>
+    </symbol>
+</svg>
