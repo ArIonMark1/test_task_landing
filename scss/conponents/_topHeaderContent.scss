@@ -1,58 +1,97 @@
 .top-header {
   display: flex;
-  padding: 12px 0;
-  gap: 10px;
-  align-items: center;
-  border: 1px solid teal;
+  padding-bottom: 8px;
+  gap: 6px;
+  // border: 1px solid teal;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 12px;
+    gap: 10px;
+  }
   .input-block {
+    display: flex;
+    max-height: 26px;
     position: relative;
     width: 100%;
-    height: 100%;
-    display: flex;
-    // border: 1px solid rgb(151, 17, 161);
+
     .search-svg {
+      position: absolute;
       width: 12px;
       height: 12px;
       left: 8px;
-      position: absolute;
       align-self: center;
       fill: transparent;
       stroke: $button-color;
     }
     .clear-svg {
       position: absolute;
-      fill: transparent;
-      stroke: $button-color;
-      align-self: center;
-      right: 8px;
       width: 8px;
       height: 8px;
+      right: 8px;
+      align-self: center;
+      stroke: $button-color;
     }
     .search-instrument {
       width: 100%;
+      // flex: 0 0 auto;
+      font-family: inherit;
+      font-size: 10px;
+      line-height: 4; // центрувати текст в інпутах
       padding: 5px 18px 5px 28px;
-      background-color: $main-bg-color;
+      color: $placeholder-color;
+      background-color: $block-color;
       border: 1px solid $hold-color;
-
-      &::placeholder {
-        display: inline-block;
-        height: 100px;
-        padding-top: 0;
-        top: -15px;
-        font-size: 10px;
-        color: $placeholder-color;
-        outline: 1px solid hotpink;
-        align-self: center;
-      }
-      ::-webkit-input-placeholder {
-        text-align: center;
-        align-items: center;
-        align-self: center;
-        color: aquamarine;
+      border-radius: 4px;
+      @media screen and (min-width: 768px) {
+        font-size: 12px;
       }
     }
   }
-
   .currency-rating {
+    border: 1px solid $hold-color;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 4px 0;
+    .currency-block {
+      margin: 0;
+      border-right: 1px solid $hover-block-color;
+      display: flex;
+      padding: 0 8px;
+      .currency-name {
+        text-transform: uppercase;
+        align-self: flex-end;
+        font-size: 8px;
+        line-height: normal;
+        color: $placeholder-color;
+      }
+      .current-value {
+        padding-left: 2px;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: normal;
+        color: $text-color;
+      }
+    }
+    .growth-rate {
+      margin: 0;
+      padding-left: 15px;
+      padding-right: 8px;
+      position: relative;
+      font-size: 10px;
+      align-self: center;
+      align-content: center;
+      display: flex;
+      color: $green-text-color;
+      .arrowUp-svg {
+        position: absolute;
+        width: 7px;
+        height: 10px;
+        left: 7px;
+        align-self: center;
+        fill: $green-text-color;
+        stroke: $green-text-color;
+      }
+    }
   }
 }

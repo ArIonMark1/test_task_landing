@@ -10,7 +10,7 @@
       integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>HTML/CSS/JS Test</title>
 
     <!-- Підключення бібліотеки Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -45,6 +45,7 @@
         </svg>
       </button>
       <div class="popup-content">
+        <!-- -------------------------- -->
         <section class="popup-container">
           <div class="top-header">
             <div class="input-block">
@@ -59,61 +60,87 @@
                 <use href="./images/svg/close.svg#closeSvg"></use>
               </svg>
             </div>
-
-            <p class="currency-rating">
-              <span>USD</span><span>120.18</span>|<span>3.29%</span>
-            </p>
+            <div class="currency-rating">
+              <p class="currency-block">
+                <span class="currency-name">usd</span>
+                <span class="current-value">120.18</span>
+              </p>
+              <p class="growth-rate">
+                <svg class="arrowUp-svg" width="20" height="20">
+                  <use href="./images/svg/arrow-up.svg#arrowUp"></use>
+                  <!-- <use href="./images/svg/search.svg#searchSvg"></use> -->
+                </svg>
+                <span>3.29%</span>
+              </p>
+            </div>
           </div>
         </section>
-
-        <div class="bottom-header">
-          <ul>
-            <li>
-              <p>Day Range</p>
-              <div>
-                <p>227.13-233.37</p>
-                <div id="lineContainer">
-                  <div id="slider"></div>
+        <!-- -------------------------- -->
+        <section class="popup-container">
+          <div class="bottom-header">
+            <ul class="control-indicators">
+              <li class="indicator-block">
+                <p class="indicator-description">Day Range</p>
+                <div class="indicator">
+                  <p class="indicator-params">227.13-233.37</p>
+                  <div class="indicator-line">
+                    <div class="slider"></div>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <p>52 Week Range</p>
-              <div>
-                <p>127.13-233.37</p>
-                <div id="lineContainer">
-                  <div id="slider"></div>
+              </li>
+              <li class="indicator-block">
+                <p class="indicator-description">52 Week Range</p>
+                <div class="indicator">
+                  <p class="indicator-params">127.13-233.37</p>
+                  <div class="indicator-line">
+                    <div class="slider"></div>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <p>Market Cap</p>
-              <p>2.04T USD</p>
-            </li>
-            <li>
-              <p>Beta</p>
-              <p>1.25</p>
-            </li>
-          </ul>
-        </div>
-        <div class="description-container">
+              </li>
+              <li class="indicator-block">
+                <p class="indicator-description">Market Cap</p>
+                <p class="indicator-params">2.04T USD</p>
+              </li>
+              <li class="indicator-block">
+                <p class="indicator-description">Beta</p>
+                <p class="indicator-params">1.25</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- -------------------------- -->
+        <section class="popup-container">
           <div class="description-menu">
-            <button onclick="showText(1)">General</button>
-            <button onclick="showText(2)">Profile</button>
-            <button onclick="showText(3)">Statistics</button>
-            <hr />
-            <div class="text-block" id="text1">
-              <h2>Текст для Кнопки General</h2>
-              <p>
+            <div class="menu-buttons">
+              <button
+                class="description-button general"
+                onclick="showText('general')">
+                General
+              </button>
+              <button
+                class="description-button profile"
+                onclick="showText('profile')">
+                Profile
+              </button>
+              <button
+                class="description-button statistics"
+                onclick="showText('statistics')">
+                Statistics
+              </button>
+            </div>
+            <div class="text-block hiden" id="general">
+              <p class="content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
                 nostrum nesciunt obcaecati perspiciatis possimus, quisquam
                 debitis eius ducimus aliquam, minus corrupti maxime dolorem
                 assumenda sapiente eligendi voluptas in nemo nisi.
               </p>
+              <button class="description-button show" onclick="togleView()">
+                Show More
+              </button>
             </div>
-            <div class="text-block" id="text2">
-              <h2>Текст для Кнопки Profile</h2>
-              <p>
+            <div class="text-block hiden" id="profile">
+              <p class="content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                 facilis a eos quaerat, voluptatum at, ipsa neque dignissimos
                 quae ut, necessitatibus sint eveniet non. Consequuntur minus
@@ -133,10 +160,12 @@
                 eveniet labore suscipit sapiente corporis minus cum natus
                 pariatur ipsam maxime repellendus deleniti fugiat. Eum.
               </p>
+              <button class="description-button show" onclick="togleView()">
+                Show More
+              </button>
             </div>
-            <div class="text-block" id="text3">
-              <h2>Текст для Кнопки Statistics</h2>
-              <p>
+            <div class="text-block hiden" id="statistics">
+              <p class="content">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
                 reiciendis magnam ipsam officia excepturi quisquam eum deserunt
                 praesentium obcaecati fugit? Possimus enim iusto, molestiae
@@ -146,82 +175,119 @@
                 necessitatibus dicta ipsa distinctio culpa, similique
                 voluptatum! Repellat repellendus numquam ratione tenetur!
               </p>
+              <button class="description-button show" onclick="togleView()">
+                Show More
+              </button>
             </div>
           </div>
-        </div>
-        <div class="grafics-block">
-          <div class="linear-grafic">
-            <p>charts</p>
-          </div>
-          <div class="general-info">
-            <p>GENERAL INFORMATION</p>
-            <p><span>TYPE</span><span>Common Stock</span></p>
-            <p><span>eXCHANGE</span><span>NASDAQ</span></p>
-          </div>
-          <div class="peers-analysis">
-            <table>
-              <caption>
-                PEERS ANALYSIS
-              </caption>
-              <thead>
-                <tr>
-                  <th>NAME</th>
-                  <th>PRICE</th>
-                  <th>DAILY CHANGE %</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span>AAPL</span><span>Apple Inc</span></td>
-                  <td>120.03</td>
-                  <td>0.04%</td>
-                </tr>
-                <tr>
-                  <td><span>CAJ</span><span>Cannon Inc</span></td>
-                  <td>120.03</td>
-                  <td>0.04%</td>
-                </tr>
-                <tr>
-                  <td><span>DELL</span><span>Dell Technologies</span></td>
-                  <td>120.03</td>
-                  <td>0.04%</td>
-                </tr>
-                <tr>
-                  <td><span>HPQ</span><span>HP Inc</span></td>
-                  <td>120.03</td>
-                  <td>0.04%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="analytics">
-            <div class="recommendations">
-              <p>ANALYSTS RECOMMENDATIONS</p>
-              <div class="indicator"></div>
-              <div class="position-list">
-                <ul class="list-colors">
-                  <li><span class="collor"></span><span>Strong Buy</span></li>
-                  <li><span class="collor"></span><span>Buy</span></li>
-                  <li><span class="collor"></span><span>Hold</span></li>
-                  <li><span class="collor"></span><span>Sell</span></li>
-                  <li><span class="collor"></span><span>Strong Sell</span></li>
-                </ul>
+        </section>
+        <!-- -------------------------- -->
+        <section class="popup-container">
+          <div class="graphs-block">
+            <div class="content left-content">
+              <div class="linear-graph">
+                <p class="title">charts</p>
+                <div class="graphBlock"></div>
+              </div>
+              <div class="analytics">
+                <div class="separator">
+                  <div class="recommendations">
+                    <p class="title">analysts recommendations</p>
+                    <div class="detal-info">
+                      <div class="indicator"></div>
+                      <div class="position-list">
+                        <ul class="list-colors">
+                          <li class="block-color">
+                            <span class="collor-container"></span
+                            ><span class="description-color">Strong Buy</span>
+                          </li>
+                          <li class="block-color">
+                            <span class="collor-container"></span
+                            ><span class="description-color">Buy</span>
+                          </li>
+                          <li class="block-color">
+                            <span class="collor-container"></span
+                            ><span class="description-color">Hold</span>
+                          </li>
+                          <li class="block-color">
+                            <span class="collor-container"></span
+                            ><span class="description-color">Sell</span>
+                          </li>
+                          <li class="block-color">
+                            <span class="collor-container"></span
+                            ><span class="description-color">Strong Sell</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="number-of-analysts">
+                  <p class="title">number of analysts</p>
+                  <div class="indicators"></div>
+                </div>
               </div>
             </div>
-            <div class="number-of-analysts">
-              <p>NUMBER OF ANALYSTS</p>
-              <div class="indicators"></div>
+            <div class="content right-content">
+              <div class="general-info">
+                <p class="title">general information</p>
+                <p class="description">
+                  <span class="title-info">type</span><span>Common Stock</span>
+                </p>
+                <p class="description">
+                  <span class="title-info">exchange</span
+                  ><span class="abbreviation">nasdaq</span>
+                </p>
+              </div>
+              <div class="peers-analysis">
+                <table>
+                  <caption class="title">
+                    peers analysis
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th>NAME</th>
+                      <th>PRICE</th>
+                      <th>DAILY CHANGE %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span>AAPL</span><span>Apple Inc</span></td>
+                      <td>120.03</td>
+                      <td>0.04%</td>
+                    </tr>
+                    <tr>
+                      <td><span>CAJ</span><span>Cannon Inc</span></td>
+                      <td>120.03</td>
+                      <td>0.04%</td>
+                    </tr>
+                    <tr>
+                      <td><span>DELL</span><span>Dell Technologies</span></td>
+                      <td>120.03</td>
+                      <td>0.04%</td>
+                    </tr>
+                    <tr>
+                      <td><span>HPQ</span><span>HP Inc</span></td>
+                      <td>120.03</td>
+                      <td>0.04%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="price-targ">
+                <p><span>price target</span><span>Current120.20</span></p>
+                <div class="gorizontal-grafic"></div>
+              </div>
             </div>
           </div>
-          <div class="price-targ">
-            <p><span>PRICE TARGET</span><span>Current120.20</span></p>
-            <div class="gorizontal-grafic"></div>
-          </div>
-        </div>
+        </section>
+        <!-- -------------------------- -->
       </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
 
     <!-- Контейнер для діаграми -->
     <!-- <div id="chart-container"> -->
@@ -305,5 +371,6 @@
 
       animate();
     </script> -->
+    <script type="module" src="./js/descriptionContent.js"></script>
   </body>
 </html>

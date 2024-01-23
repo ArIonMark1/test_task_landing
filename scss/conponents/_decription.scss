@@ -1,0 +1,79 @@
+.description-menu {
+  //   border: 1px solid thistle;
+
+  .menu-buttons {
+    padding-bottom: 8px;
+    border-bottom: 1px solid $hover-block-color;
+    text-align: left;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 12px;
+    }
+
+    .description-button {
+      padding: 3px 8px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      color: $placeholder-color;
+      background: transparent;
+      font-size: 12px;
+      line-height: normal;
+      letter-spacing: 0.2px;
+      transition: color $cubic-animation, background-color $cubic-animation;
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $hold-color;
+        color: $text-color;
+      }
+    }
+  }
+  .text-block {
+    border-bottom: 1px solid $hover-block-color;
+    padding: 8px 0;
+    text-align: left;
+    @media screen and (min-width: 768px) {
+      padding: 12px 0;
+    }
+
+    .content {
+      margin: 0;
+      max-width: 100%;
+      min-height: 60px;
+      font-size: 12px;
+      line-height: 1.6;
+      text-align: left;
+      overflow: hidden;
+      padding-bottom: 10px;
+      //   border: 1px solid yellowgreen;s
+    }
+    .description-button {
+      padding: 5px 10px;
+      border: none;
+      outline: 1px solid $hover-block-color;
+      color: $green-text-color;
+      border-radius: 4px;
+      cursor: pointer;
+      align-items: center;
+
+      //   color: $placeholder-color;
+      background: transparent;
+      font-size: 12px;
+      line-height: normal;
+      letter-spacing: 0.2px;
+      transition: color $cubic-animation;
+      &:hover,
+      &:focus,
+      &:active {
+        outline: 1px solid $hover-block-color;
+        color: $green-text-color;
+      }
+    }
+  }
+  .hiden {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

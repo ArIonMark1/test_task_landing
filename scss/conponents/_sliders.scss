@@ -1,26 +1,59 @@
-#lineContainer {
-  position: relative;
-  width: 100px;
-  height: 1px;
+// .indicator-line {
+//   position: relative;
+//   width: 100px;
+//   height: 1px;
 
-  align-self: center;
-  background: linear-gradient(
-    to right,
-    #3498db 50.5%,
-    transparent 50.5%,
-    transparent 51%,
-    #2ecc71 51%
-  );
-  background-size: 120% 100%;
-  border-radius: 2px;
-}
+//   align-self: center;
+//   background: linear-gradient(
+//     to right,
+//     #3498db 50.5%,
+//     transparent 50.5%,
+//     transparent 51%,
+//     #2ecc71 51%
+//   );
+//   background-size: 120% 100%;
+//   border-radius: 2px;
+// }
 
-#slider {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background-color: tomato;
-  border-radius: 50%;
-  top: -2px;
-  transition: left 0.3s ease; /* Додали анімацію для плавної зміни положення */
+// .slider {
+//   position: absolute;
+//   width: 5px;
+//   height: 5px;
+//   background-color: tomato;
+//   border-radius: 50%;
+//   top: -2px;
+//   transition: left 0.3s ease; /* Додали анімацію для плавної зміни положення */
+// }
+.indicator {
+  display: flex;
+  width: 100%;
+  padding-right: 10px;
+
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+
+  .indicator-line {
+    position: relative;
+    width: 75px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      $strong-sell-color 50%,
+      transparent 50%,
+      transparent 51%,
+      $green-text-color 51%
+    );
+    background-size: 120% 100%;
+    border-radius: 2px;
+    .slider {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: tomato;
+      border-radius: 50%;
+      top: -2px;
+      transition: left 0.3s ease; /* Додали анімацію для плавної зміни положення */
+    }
+  }
 }

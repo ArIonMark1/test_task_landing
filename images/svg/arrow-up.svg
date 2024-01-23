@@ -1,0 +1,16 @@
+<svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="7" 
+    height="12"
+    viewBox="0 0 7 12"
+>
+    <symbol id="arrowUp" viewBox="0 0 7 12">
+        <path 
+
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M3.5 1.68v8.64M1.633 3.6 3.5 1.68 1.633 3.6ZM3.5 1.68 5.367 3.6 3.5 1.68Z"
+        />
+    </symbol>
+
+</svg>

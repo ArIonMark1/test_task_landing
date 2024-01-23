@@ -15,6 +15,11 @@ img {
   cursor: pointer;
   font-family: inherit;
 }
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
 // ----------------------------------
 .container {
   width: 100%;
@@ -38,7 +43,11 @@ img {
 }
 .popup-container {
   margin: 0 auto;
-  padding: 0 12px;
+  padding: 0 8px;
   width: 100%;
-  outline: 1px solid red;
+  // outline: 1px solid rgba(255, 0, 0, 0.316);
+  @media screen and (min-width: 768px) {
+    padding: 0 12px;
+    max-width: 768px;
+  }
 }
