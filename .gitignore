@@ -13,3 +13,4 @@ indexTest.html
 styles/styleTest.css
 js/jsTest.js
 images/testImg/
+images/*.svg
