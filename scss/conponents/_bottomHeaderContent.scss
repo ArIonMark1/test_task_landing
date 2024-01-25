@@ -8,60 +8,101 @@
     display: flex;
     flex-wrap: wrap;
 
-    justify-content: space-between;
     background: $main-bg-color;
     border-radius: 4px;
-    font-size: 10px;
+    overflow: hidden;
 
-    // gap: 10px;
+    @media screen and (min-width: 1024px) {
+      justify-content: space-between;
+      background: $block-color;
+      padding: 10px 0;
+      flex-wrap: nowrap;
+    }
 
     .indicator-block {
       display: flex;
       justify-content: center;
       margin: 0;
-      //   padding: 10px 15px;
       padding: 6px 0;
       padding-left: 10px;
       width: 50%;
       background: $block-color;
+      @media screen and (min-width: 1024px) {
+        width: auto;
+        padding: 0;
+        flex-grow: 1;
+        background: transparent;
+        border-right: 1px solid $hover-block-color;
+        padding: 0 15px;
+        &:last-child {
+          border-right: none;
+        }
+      }
+
       .indicator-description {
-        padding-right: 10px;
-        text-align-last: right;
+        align-self: center;
+        align-items: center;
+        margin: 0;
+        color: $placeholder-color;
+        padding-right: 8px;
+        font-size: 9px;
         width: 100%;
+
+        @media screen and (min-width: 768px) {
+          font-size: 10px;
+        }
+        @media screen and (min-width: 1024px) {
+          text-align-last: left;
+          min-width: max-content;
+        }
       }
       .indicator-params {
+        font-size: 9px;
         margin: 0;
         color: $text-color;
-        text-align-last: left;
+        align-self: center;
         width: 100%;
+        @media screen and (min-width: 768px) {
+          font-size: 10px;
+        }
+        @media screen and (min-width: 1024px) {
+          min-width: max-content;
+        }
       }
       &:first-child {
         .indicator {
           border-right: 1px solid $hover-block-color;
+          @media screen and (min-width: 1024px) {
+            border-right: none;
+          }
         }
       }
       &:nth-child(odd) {
         border-radius: 4px 0 0 4px;
+        @media screen and (min-width: 1024px) {
+          border-radius: 0;
+        }
       }
       &:nth-child(even) {
         border-radius: 0 4px 4px 0;
+        @media screen and (min-width: 1024px) {
+          border-radius: 0;
+        }
       }
       &:nth-child(n + 3) {
         margin-top: 5px;
-        .indicator-params {
-          padding-right: 10px;
+
+        @media screen and (min-width: 1024px) {
+          margin-top: 0;
         }
       }
       &:nth-child(3) {
         .indicator-params {
           border-right: 1px solid $hover-block-color;
+          @media screen and (min-width: 1024px) {
+            border-right: none;
+          }
         }
-      }
-      .indicator-description {
-        align-self: center;
-        margin: 0;
-
-        color: $placeholder-color;
       }
     }
   }

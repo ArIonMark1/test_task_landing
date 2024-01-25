@@ -15,13 +15,6 @@
     <!-- Підключення бібліотеки Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://threejs.org/build/three.js"></script>
-    <style>
-      /* Стилі для контейнера, що містить діаграму */
-      #chart-container {
-        width: 80%;
-        margin: 20px auto;
-      }
-    </style>
   </head>
   <body>
     <!-- ТЗ
@@ -38,339 +31,349 @@
       <button class="open-popup" id="openPopupBtn">Відкрити попап</button>
     </section>
     <!-- ################################################ -->
-    <section id="popup" class="popup">
-      <button type="button" class="close-popup">
-        <svg class="nav-link-icon close-svg">
-          <use href="./images/svg/close.svg#closeSvg"></use>
-        </svg>
-      </button>
-      <div class="popup-content">
-        <!-- -------------------------- -->
-        <section class="popup-container">
-          <div class="top-header">
-            <div class="input-block">
-              <svg class="search-svg" width="20" height="20">
-                <use href="./images/svg/search.svg#searchSvg"></use>
-              </svg>
-              <input
-                class="search-instrument"
-                type="text"
-                placeholder="Search instrument..." />
-              <svg class="clear-svg" width="20" height="20">
-                <use href="./images/svg/close.svg#closeSvg"></use>
-              </svg>
-            </div>
-            <div class="currency-rating">
-              <p class="currency-block">
-                <span class="currency-name">usd</span>
-                <span class="current-value">120.18</span>
-              </p>
-              <p class="growth-rate">
-                <svg class="arrowUp-svg" width="20" height="20">
-                  <use href="./images/svg/arrow-up.svg#arrowUp"></use>
-                  <!-- <use href="./images/svg/search.svg#searchSvg"></use> -->
+
+    <div class="background">
+      <!-- is-visible -->
+      <section class="popup">
+        <button type="button" class="close-popup">
+          <svg class="nav-link-icon close-svg">
+            <use href="./images/svg/close.svg#closeSvg"></use>
+          </svg>
+        </button>
+        <div class="popup-content">
+          <!-- -------------------------- -->
+          <section class="popup-container">
+            <div class="top-header">
+              <div class="input-block">
+                <svg class="search-svg" width="20" height="20">
+                  <use href="./images/svg/search.svg#searchSvg"></use>
                 </svg>
-                <span>3.29%</span>
-              </p>
-            </div>
-          </div>
-        </section>
-        <!-- -------------------------- -->
-        <section class="popup-container">
-          <div class="bottom-header">
-            <ul class="control-indicators">
-              <li class="indicator-block">
-                <p class="indicator-description">Day Range</p>
-                <div class="indicator">
-                  <p class="indicator-params">227.13-233.37</p>
-                  <div class="indicator-line">
-                    <div class="slider"></div>
-                  </div>
-                </div>
-              </li>
-              <li class="indicator-block">
-                <p class="indicator-description">52 Week Range</p>
-                <div class="indicator">
-                  <p class="indicator-params">127.13-233.37</p>
-                  <div class="indicator-line">
-                    <div class="slider"></div>
-                  </div>
-                </div>
-              </li>
-              <li class="indicator-block">
-                <p class="indicator-description">Market Cap</p>
-                <p class="indicator-params">2.04T USD</p>
-              </li>
-              <li class="indicator-block">
-                <p class="indicator-description">Beta</p>
-                <p class="indicator-params">1.25</p>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- -------------------------- -->
-        <section class="popup-container">
-          <div class="description-menu">
-            <div class="menu-buttons">
-              <button
-                class="description-button general"
-                onclick="showText('general')">
-                General
-              </button>
-              <button
-                class="description-button profile"
-                onclick="showText('profile')">
-                Profile
-              </button>
-              <button
-                class="description-button statistics"
-                onclick="showText('statistics')">
-                Statistics
-              </button>
-            </div>
-            <div class="text-block hiden" id="general">
-              <p class="content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                nostrum nesciunt obcaecati perspiciatis possimus, quisquam
-                debitis eius ducimus aliquam, minus corrupti maxime dolorem
-                assumenda sapiente eligendi voluptas in nemo nisi.
-              </p>
-              <button class="description-button show" onclick="togleView()">
-                Show More
-              </button>
-            </div>
-            <div class="text-block hiden" id="profile">
-              <p class="content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                facilis a eos quaerat, voluptatum at, ipsa neque dignissimos
-                quae ut, necessitatibus sint eveniet non. Consequuntur minus
-                aspernatur magnam ipsam quibusdam. Quam excepturi optio debitis
-                blanditiis maiores accusamus, neque perspiciatis! Illo modi
-                cupiditate tempore voluptates fugit, quia tenetur aliquid dolor?
-                Nostrum enim sit veritatis, repudiandae quas inventore ullam
-                provident minima corrupti. Est accusamus voluptate, explicabo,
-                molestiae amet consequuntur laborum, sit earum odio atque rerum
-                nam esse in ipsum. Quaerat ipsam, saepe distinctio quos dolores
-                quis atque in cumque quae nobis nisi! Culpa officiis delectus
-                ipsum, iusto recusandae ut mollitia nostrum tempora facere iure
-                sapiente nobis animi, commodi aspernatur et, ex in fugit
-                inventore sed expedita. Magnam et nulla tempore excepturi
-                aspernatur! Excepturi accusamus, alias sint assumenda fugit vel
-                impedit consectetur vitae praesentium ratione odio itaque sit
-                eveniet labore suscipit sapiente corporis minus cum natus
-                pariatur ipsam maxime repellendus deleniti fugiat. Eum.
-              </p>
-              <button class="description-button show" onclick="togleView()">
-                Show More
-              </button>
-            </div>
-            <div class="text-block hiden" id="statistics">
-              <p class="content">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
-                reiciendis magnam ipsam officia excepturi quisquam eum deserunt
-                praesentium obcaecati fugit? Possimus enim iusto, molestiae
-                voluptatem harum at neque consequuntur iure. Laborum veniam
-                debitis sequi animi eligendi atque inventore eveniet maiores
-                itaque sint tempora magnam tenetur vitae nulla iste
-                necessitatibus dicta ipsa distinctio culpa, similique
-                voluptatum! Repellat repellendus numquam ratione tenetur!
-              </p>
-              <button class="description-button show" onclick="togleView()">
-                Show More
-              </button>
-            </div>
-          </div>
-        </section>
-        <!-- -------------------------- -->
-        <section class="popup-container">
-          <div class="graphs-block">
-            <div class="content left-content">
-              <div class="linear-graph">
-                <p class="title">charts</p>
-                <div class="graphBlock"></div>
+                <input
+                  class="search-instrument"
+                  type="text"
+                  placeholder="Search instrument..." />
+                <svg class="clear-svg" width="20" height="20">
+                  <use href="./images/svg/close.svg#closeSvg"></use>
+                </svg>
               </div>
-              <div class="analytics">
-                <div class="separator">
-                  <div class="recommendations">
-                    <p class="title">analysts recommendations</p>
-                    <div class="detal-info">
-                      <div class="indicator"></div>
-                      <div class="position-list">
-                        <ul class="list-colors">
-                          <li class="block-color">
-                            <span class="collor-container"></span
-                            ><span class="description-color">Strong Buy</span>
-                          </li>
-                          <li class="block-color">
-                            <span class="collor-container"></span
-                            ><span class="description-color">Buy</span>
-                          </li>
-                          <li class="block-color">
-                            <span class="collor-container"></span
-                            ><span class="description-color">Hold</span>
-                          </li>
-                          <li class="block-color">
-                            <span class="collor-container"></span
-                            ><span class="description-color">Sell</span>
-                          </li>
-                          <li class="block-color">
-                            <span class="collor-container"></span
-                            ><span class="description-color">Strong Sell</span>
-                          </li>
-                        </ul>
+              <div class="currency-rating">
+                <p class="currency-block">
+                  <span class="currency-name">usd</span>
+                  <span class="current-value">120.18</span>
+                </p>
+                <p class="growth-rate">
+                  <svg class="arrowUp-svg" width="20" height="20">
+                    <use href="./images/svg/arrow-up.svg#arrowUp"></use>
+                    <!-- <use href="./images/svg/search.svg#searchSvg"></use> -->
+                  </svg>
+                  <span>3.29%</span>
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- -------------------------- -->
+          <section class="popup-container">
+            <div class="bottom-header">
+              <ul class="control-indicators">
+                <li class="indicator-block">
+                  <p class="indicator-description">Day Range</p>
+                  <div class="indicator">
+                    <p class="indicator-params">227.13-233.37</p>
+                    <div class="indicator-line">
+                      <div class="slider"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="indicator-block">
+                  <p class="indicator-description">52 Week Range</p>
+                  <div class="indicator">
+                    <p class="indicator-params">127.13-233.37</p>
+                    <div class="indicator-line">
+                      <div class="slider"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="indicator-block">
+                  <p class="indicator-description">Market Cap</p>
+                  <p class="indicator-params">2.04T USD</p>
+                </li>
+                <li class="indicator-block">
+                  <p class="indicator-description">Beta</p>
+                  <p class="indicator-params">1.25</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- -------------------------- -->
+          <section class="popup-container">
+            <div class="description-menu">
+              <div class="menu-buttons">
+                <button
+                  class="description-button general"
+                  onclick="showText('general')">
+                  General
+                </button>
+                <button
+                  class="description-button profile"
+                  onclick="showText('profile')">
+                  Profile
+                </button>
+                <button
+                  class="description-button statistics"
+                  onclick="showText('statistics')">
+                  Statistics
+                </button>
+              </div>
+              <div class="text-block hiden" id="general">
+                <p class="content">
+                  Apple Inc. designs, manufactures, and markets smartphones,
+                  personal computers, tablets, wearables, and accessories
+                  worldwide. It also sells various related services. The company
+                  offers iPhone, a line of smartphones; Mac, a line of personal
+                  computers; iPad, a line of multi-purpose tablets; and
+                  wearables, home, and accessories apple Inc. designs,
+                  manufactures, and markets smartphones, personal computers,
+                  tablets, wearables, and accessories worldwide. It also sells
+                  various related services. The company offers iPhone, a line of
+                  smartphones;
+                </p>
+                <button class="description-button show" onclick="togleView()">
+                  Show More
+                </button>
+              </div>
+              <div class="text-block hiden" id="profile">
+                <p class="content">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+                  facilis a eos quaerat, voluptatum at, ipsa neque dignissimos
+                  quae ut, necessitatibus sint eveniet non. Consequuntur minus
+                  aspernatur magnam ipsam quibusdam. Quam excepturi optio
+                  debitis blanditiis maiores accusamus, neque perspiciatis! Illo
+                  modi cupiditate tempore voluptates fugit, quia tenetur aliquid
+                  dolor? Nostrum enim sit veritatis, repudiandae quas inventore
+                  ullam provident minima corrupti. Est accusamus voluptate,
+                  explicabo, molestiae amet consequuntur laborum, sit earum odio
+                  atque rerum nam esse in ipsum. Quaerat ipsam, saepe distinctio
+                  quos dolores quis atque in cumque quae nobis nisi! Culpa
+                  officiis delectus ipsum, iusto recusandae ut mollitia nostrum
+                  tempora facere iure sapiente nobis animi, commodi aspernatur
+                  et, ex in fugit inventore sed expedita. Magnam et nulla
+                  tempore excepturi aspernatur! Excepturi accusamus, alias sint
+                  assumenda fugit vel impedit consectetur vitae praesentium
+                  ratione odio itaque sit eveniet labore suscipit sapiente
+                  corporis minus cum natus pariatur ipsam maxime repellendus
+                  deleniti fugiat. Eum.
+                </p>
+                <button class="description-button show" onclick="togleView()">
+                  Show More
+                </button>
+              </div>
+              <div class="text-block hiden" id="statistics">
+                <p class="content">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
+                  reiciendis magnam ipsam officia excepturi quisquam eum
+                  deserunt praesentium obcaecati fugit? Possimus enim iusto,
+                  molestiae voluptatem harum at neque consequuntur iure. Laborum
+                  veniam debitis sequi animi eligendi atque inventore eveniet
+                  maiores itaque sint tempora magnam tenetur vitae nulla iste
+                  necessitatibus dicta ipsa distinctio culpa, similique
+                  voluptatum! Repellat repellendus numquam ratione tenetur!
+                </p>
+                <button class="description-button show" onclick="togleView()">
+                  Show More
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- -------------------------- -->
+          <section class="popup-container">
+            <div class="graphs-block">
+              <div class="content left-content">
+                <div class="linear-graph">
+                  <p class="title">charts</p>
+                  <div class="graphBlock">
+                    <canvas class="image-graph"></canvas>
+                  </div>
+                </div>
+                <div class="analytics">
+                  <div class="separator">
+                    <div class="recommendations">
+                      <p class="title">analysts recommendations</p>
+                      <div class="detal-info">
+                        <div class="indicator"></div>
+                        <div class="position-list">
+                          <ul class="list-colors">
+                            <li class="block-color">
+                              <span class="collor-container"></span
+                              ><span class="description-color">Strong Buy</span>
+                            </li>
+                            <li class="block-color">
+                              <span class="collor-container"></span
+                              ><span class="description-color">Buy</span>
+                            </li>
+                            <li class="block-color">
+                              <span class="collor-container"></span
+                              ><span class="description-color">Hold</span>
+                            </li>
+                            <li class="block-color">
+                              <span class="collor-container"></span
+                              ><span class="description-color">Sell</span>
+                            </li>
+                            <li class="block-color">
+                              <span class="collor-container"></span
+                              ><span class="description-color"
+                                >Strong Sell</span
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="number-of-analysts">
+                    <p class="title">number of analysts</p>
+                    <div class="indicators">
+                      <div class="image-graph"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="content right-content">
+                <div class="general-info">
+                  <p class="title">general information</p>
+                  <div class="contentInfo">
+                    <p class="description">
+                      <span class="title-info">type</span
+                      ><span>Common Stock</span>
+                    </p>
+                    <p class="description">
+                      <span class="title-info">exchange</span
+                      ><span class="abbreviation">nasdaq</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="peers-analysis">
+                  <p class="title">peers analysis</p>
+                  <div class="table">
+                    <div class="table-header">
+                      <div class="header-row">
+                        <p class="header-point">Name</p>
+                        <p class="header-point">Price</p>
+                        <p class="header-point">Daily Change %</p>
+                      </div>
+                    </div>
+                    <div class="table-body">
+                      <div class="row active">
+                        <div class="cell name">
+                          <span class="short-name">aapl</span
+                          ><span class="long-name">Apple Inc</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">0.05%</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">caj</span>
+                          <span class="long-name">Cannon Inc</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">1.08%</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">dell</span>
+                          <span class="long-name">Dell Technologies</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">0.09%</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">hpq</span>
+                          <span class="long-name">HP Inc</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">3.02%</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">hpe</span>
+                          <span class="long-name">Dell Technologies</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">1.05%</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">logi</span>
+                          <span class="long-name">Dell Technologies</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">0.07%</div>
+                      </div>
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">stx</span>
+                          <span class="long-name">Apple Inc</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">0.07%</div>
+                      </div>
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">wdc</span>
+                          <span class="long-name">Cannon Inc</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">0.07%</div>
+                      </div>
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">sne</span>
+                          <span class="long-name">Dell Technologies</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">0.07%</div>
+                      </div>
+                      <div class="row">
+                        <div class="cell name">
+                          <span class="short-name">dis</span>
+                          <span class="long-name">Cannon Inc</span>
+                        </div>
+                        <div class="cell price">120.03</div>
+                        <div class="cell change">0.07%</div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="number-of-analysts">
-                  <p class="title">number of analysts</p>
-                  <div class="indicators"></div>
+                <div class="price-targ">
+                  <p class="title">
+                    <span>price target</span>
+                    <span class="current-info"
+                      >Current <span>120.20</span></span
+                    >
+                  </p>
+                  <div class="gorizontal-grafic">
+                    <div class="grafic-img"></div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="content right-content">
-              <div class="general-info">
-                <p class="title">general information</p>
-                <p class="description">
-                  <span class="title-info">type</span><span>Common Stock</span>
-                </p>
-                <p class="description">
-                  <span class="title-info">exchange</span
-                  ><span class="abbreviation">nasdaq</span>
-                </p>
-              </div>
-              <div class="peers-analysis">
-                <table>
-                  <caption class="title">
-                    peers analysis
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th>NAME</th>
-                      <th>PRICE</th>
-                      <th>DAILY CHANGE %</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><span>AAPL</span><span>Apple Inc</span></td>
-                      <td>120.03</td>
-                      <td>0.04%</td>
-                    </tr>
-                    <tr>
-                      <td><span>CAJ</span><span>Cannon Inc</span></td>
-                      <td>120.03</td>
-                      <td>0.04%</td>
-                    </tr>
-                    <tr>
-                      <td><span>DELL</span><span>Dell Technologies</span></td>
-                      <td>120.03</td>
-                      <td>0.04%</td>
-                    </tr>
-                    <tr>
-                      <td><span>HPQ</span><span>HP Inc</span></td>
-                      <td>120.03</td>
-                      <td>0.04%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="price-targ">
-                <p><span>price target</span><span>Current120.20</span></p>
-                <div class="gorizontal-grafic"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- -------------------------- -->
-      </div>
-    </section>
-
+          </section>
+          <!-- -------------------------- -->
+        </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/script.js"></script>
-
-    <!-- Контейнер для діаграми -->
-    <!-- <div id="chart-container"> -->
-    <!-- Діаграма буде відображена тут -->
-    <!-- <canvas id="myChart"></canvas> -->
-    <!-- </div> -->
-
-    <!-- <script>
-      // JavaScript код для створення діаграми з використанням Chart.js
-      document.addEventListener("DOMContentLoaded", function () {
-        // Дані для діаграми (приклад)
-        var data = {
-          labels: ["Січень", "Лютий", "Березень", "Квітень", "Травень"],
-          datasets: [
-            {
-              label: "Продажі за місяць",
-              backgroundColor: "rgba(75, 194, 192, 0.5)",
-              borderColor: "rgba(75, 192, 192, 1)",
-              borderWidth: 1,
-              data: [65, 49, 60, 71, 96],
-            },
-          ],
-        };
-
-        // Опції для діаграми
-        var options = {
-          responsive: true,
-          maintainAspectRatio: false,
-        };
-
-        // Отримання контексту канвасу
-        var ctx = document.getElementById("myChart").getContext("2d");
-
-        // Створення діаграми
-        var myChart = new Chart(ctx, {
-          type: "bar", // Тип діаграми (можна вибрати інший тип)
-          data: data,
-          options: options,
-        });
-      });
-    </script> -->
-    <!-- ######## -->
-    <!-- <script>
-      // Ініціалізація сцени, камери та рендерера
-      var scene = new THREE.Scene();
-      var camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      );
-      var renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-
-      // Створення геометрії (куба)
-      var geometry = new THREE.BoxGeometry();
-
-      // Створення матеріалу (колір)
-      var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-
-      // Створення мешу (об'єкту) з геометрії та матеріалу
-      var cube = new THREE.Mesh(geometry, material);
-
-      // Додавання куба до сцени
-      scene.add(cube);
-
-      // Встановлення позиції камери
-      camera.position.z = 5;
-
-      // Оновлення сцени та рендерінг
-      var animate = function () {
-        requestAnimationFrame(animate);
-
-        // Обертання куба
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-
-        renderer.render(scene, camera);
-      };
-
-      animate();
-    </script> -->
     <script type="module" src="./js/descriptionContent.js"></script>
+    <script type="module" src="js/activeTableRow.js"></script>
+    <script type="module" src="js/linearGraph.js"></script>
   </body>
 </html>

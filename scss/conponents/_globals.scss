@@ -2,7 +2,7 @@
 
 body {
   font-family: "Open Sans Regular", sans-serif;
-
+  line-height: normal;
   background-color: $main-bg-color;
 }
 img {
@@ -24,30 +24,22 @@ ul {
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 12px;
 
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-
-  @media screen and (min-width: 480px) {
-    max-width: 480px;
-  }
-  @media screen and (min-width: 768px) {
-    max-width: 768px;
-  }
-  @media screen and (min-width: 1200px) {
-    max-width: 1200px;
-  }
 }
 .popup-container {
   margin: 0 auto;
   padding: 0 8px;
   width: 100%;
-  // outline: 1px solid rgba(255, 0, 0, 0.316);
   @media screen and (min-width: 768px) {
     padding: 0 12px;
-    max-width: 768px;
   }
+}
+.is-visible {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }

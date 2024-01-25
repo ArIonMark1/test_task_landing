@@ -1,36 +1,185 @@
 .content {
   .general-info {
     width: 100%;
-    padding: 8px 8px 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: $block-color;
     border-radius: 4px;
-    // border: 1px solid lawngreen;
-
-    .description {
-      margin: 0;
-      padding-top: 8px;
-      display: flex;
-      justify-content: space-between;
-      .title-info {
-        color: $placeholder-color;
-        text-transform: uppercase;
-      }
-      .abbreviation {
-        text-transform: uppercase;
+    .contentInfo {
+      padding: 0 8px 8px;
+      .description {
+        margin: 0;
+        padding-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        .title-info {
+          color: $placeholder-color;
+          text-transform: uppercase;
+        }
+        .abbreviation {
+          text-transform: uppercase;
+        }
       }
     }
   }
   .peers-analysis {
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: $block-color;
+    // border: 1px solid mediumorchid;
+    .table {
+      width: 100%;
+      .table-header {
+        display: flex;
+        padding: 0 8px;
+        border-top: 1px solid $hover-block-color;
+        border-bottom: 1px solid $hover-block-color;
+        @media screen and (min-width: 1024px) {
+        }
+        .header-row {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          .header-point {
+            margin: 0;
+            flex: 1;
+            font-size: 8px;
+            padding: 2px 0;
+            font-weight: 600;
+            line-height: normal;
+            color: $placeholder-color;
+            letter-spacing: 0.2px;
+            text-align: center;
+            text-transform: uppercase;
+            @media screen and (min-width: 1024px) {
+              font-size: 10px;
+              min-width: max-content;
+            }
+            // border: 1px solid $strong-buy-color;
+            &:first-child {
+              flex: 2;
+              text-align: left;
+            }
+          }
+        }
+      }
+      .table-body {
+        padding: 8px 4px;
+        @media screen and (min-width: 1024px) {
+          padding: 12px 4px;
+        }
+        .row {
+          cursor: pointer;
+          display: flex;
+          border-bottom: 1px solid $hover-block-color;
+          padding: 8px 8px;
+          &:nth-child(2) change {
+            color: $strong-sell-color;
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+          @media screen and (min-width: 1024px) {
+            font-size: 12px;
+          }
+          .cell {
+            flex: 1;
+            text-align: center;
+          }
+          .name {
+            display: flex;
+            flex: 2;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: left;
+            padding-left: 4px;
+            @media screen and (min-width: 1024px) {
+              flex: 1.5;
+              padding: 0;
+            }
+            .short-name {
+              min-width: 30px;
+              font-size: 10px;
+              font-weight: 600;
+              box-sizing: border-box;
+              text-transform: uppercase;
+              color: $strong-buy-color;
+              @media screen and (min-width: 1024px) {
+                // width: 30px;
+                padding-right: 12px;
+                font-size: 12px;
+              }
+            }
+            .long-name {
+              padding: 0 4px;
+              font-size: 10px;
+              color: $placeholder-color;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              @media screen and (min-width: 1024px) {
+                text-align: left;
+                padding-left: 12px;
+                font-size: 12px;
+                width: 100%;
+              }
+            }
+          }
+          .change {
+            color: $strong-buy-color;
+          }
+          &:nth-child(4) .change {
+            color: $strong-sell-color;
+          }
+          &:nth-child(6) .change {
+            color: $strong-sell-color;
+          }
+        }
+        .active {
+          border: 1px solid $strong-buy-color; /* Зелений бордер для активного рядка */
+          border-radius: 4px;
+        }
+      }
+    }
   }
   .price-targ {
+    background-color: $block-color;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .current-info {
+      position: relative;
+      color: rgba(196, 196, 196, 0.5);
+      text-transform: none;
+      text-align: center;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -10%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $lamp-color;
+      }
+    }
+    .gorizontal-grafic {
+      padding: 0 8px 8px 8px;
+      width: 100%;
+      border: 1px solid blueviolet;
+
+      .grafic-img {
+        height: 85px;
+        border: 1px solid red;
+      }
+    }
   }
-}
-
-.title {
-}
-
-.gorizontal-grafic {
 }

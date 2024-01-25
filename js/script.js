@@ -1,10 +1,12 @@
-const openPopupBtn = document.querySelector(".open-popup");
-const closePopupBtn = document.querySelector(".close-popup");
+const refs = {
+  openPopupBtn: document.querySelector(".open-popup"),
+  closePopupBtn: document.querySelector(".close-popup"),
+  modalBlock: document.querySelector(".background"),
+};
 
-openPopupBtn.addEventListener("click", function () {
-  document.getElementById("popup").style.display = "block";
-});
+const toggleModalVision = () => {
+  refs.modalBlock.classList.toggle("is-visible");
+};
 
-closePopupBtn.addEventListener("click", function () {
-  document.getElementById("popup").style.display = "none";
-});
+refs.openPopupBtn.addEventListener("click", toggleModalVision);
+refs.closePopupBtn.addEventListener("click", toggleModalVision);
