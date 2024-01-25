@@ -8,12 +8,12 @@
     @media screen and (min-width: 768px) {
       padding-bottom: 12px;
     }
-
     .description-button {
       padding: 3px 8px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      // align-items: center;
 
       color: $placeholder-color;
       background: transparent;
@@ -22,11 +22,14 @@
       letter-spacing: 0.2px;
       transition: color $cubic-animation, background-color $cubic-animation;
       &:hover,
-      &:focus,
-      &:active {
+      &:focus {
         background-color: $hold-color;
         color: $text-color;
       }
+    }
+    .description-active {
+      background-color: $hold-color;
+      color: $text-color;
     }
   }
   .text-block {
@@ -50,11 +53,9 @@
       line-height: 1.6;
       text-align: left;
       padding-bottom: 10px;
-      // text-overflow: ellipsis " [...]";
-      // border: 1px solid red;
       margin-bottom: 10px;
     }
-    .description-button {
+    .show-content {
       padding: 5px 10px;
       border: none;
       outline: 1px solid $hover-block-color;
@@ -62,8 +63,6 @@
       border-radius: 4px;
       cursor: pointer;
       align-items: center;
-
-      //   color: $placeholder-color;
       background: transparent;
       font-size: 10px;
       line-height: normal;

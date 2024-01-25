@@ -13,20 +13,9 @@
     <title>HTML/CSS/JS Test</title>
 
     <!-- Підключення бібліотеки Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://threejs.org/build/three.js"></script>
+    <!-- <script src="https://threejs.org/build/three.js"></script> -->
   </head>
   <body>
-    <!-- ТЗ
-    Необхідно створити адаптивну кросбраузерну верстку макета
-    Верстка повинна бути максимально точна
-    Графіки і діаграми повинні бути інтерактивними
-    Можна використовувати будь-які бібліотеки і плагіни(chart.js, three.js, d3 ....)
-    General, Profile, Statistics - таби які переключають контент в блоці під ними(текст)
-    Кнопка Show More/Show Less відкриває.закриває текст (акордеон)
-    
-    Все содержиме макету потрібно зробити у вигляді попапу(модалки) по центру сторінки.
--->
     <section class="container">
       <button class="open-popup" id="openPopupBtn">Відкрити попап</button>
     </section>
@@ -108,23 +97,15 @@
           <section class="popup-container">
             <div class="description-menu">
               <div class="menu-buttons">
-                <button
-                  class="description-button general"
-                  onclick="showText('general')">
+                <button class="description-button general description-active">
                   General
                 </button>
-                <button
-                  class="description-button profile"
-                  onclick="showText('profile')">
-                  Profile
-                </button>
-                <button
-                  class="description-button statistics"
-                  onclick="showText('statistics')">
+                <button class="description-button profile">Profile</button>
+                <button class="description-button statistics">
                   Statistics
                 </button>
               </div>
-              <div class="text-block hiden" id="general">
+              <div class="text-block" id="general">
                 <p class="content">
                   Apple Inc. designs, manufactures, and markets smartphones,
                   personal computers, tablets, wearables, and accessories
@@ -137,48 +118,49 @@
                   various related services. The company offers iPhone, a line of
                   smartphones;
                 </p>
-                <button class="description-button show" onclick="togleView()">
+                <button class="show-content" onclick="togleView()">
                   Show More
                 </button>
               </div>
               <div class="text-block hiden" id="profile">
                 <p class="content">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                  facilis a eos quaerat, voluptatum at, ipsa neque dignissimos
-                  quae ut, necessitatibus sint eveniet non. Consequuntur minus
-                  aspernatur magnam ipsam quibusdam. Quam excepturi optio
-                  debitis blanditiis maiores accusamus, neque perspiciatis! Illo
-                  modi cupiditate tempore voluptates fugit, quia tenetur aliquid
-                  dolor? Nostrum enim sit veritatis, repudiandae quas inventore
-                  ullam provident minima corrupti. Est accusamus voluptate,
-                  explicabo, molestiae amet consequuntur laborum, sit earum odio
-                  atque rerum nam esse in ipsum. Quaerat ipsam, saepe distinctio
-                  quos dolores quis atque in cumque quae nobis nisi! Culpa
-                  officiis delectus ipsum, iusto recusandae ut mollitia nostrum
-                  tempora facere iure sapiente nobis animi, commodi aspernatur
-                  et, ex in fugit inventore sed expedita. Magnam et nulla
-                  tempore excepturi aspernatur! Excepturi accusamus, alias sint
-                  assumenda fugit vel impedit consectetur vitae praesentium
-                  ratione odio itaque sit eveniet labore suscipit sapiente
-                  corporis minus cum natus pariatur ipsam maxime repellendus
-                  deleniti fugiat. Eum.
+                  Profile current company sit amet consectetur adipisicing elit.
+                  Error facilis a eos quaerat, voluptatum at, ipsa neque
+                  dignissimos quae ut, necessitatibus sint eveniet non.
+                  Consequuntur minus aspernatur magnam ipsam quibusdam. Quam
+                  excepturi optio debitis blanditiis maiores accusamus, neque
+                  perspiciatis! Illo modi cupiditate tempore voluptates fugit,
+                  quia tenetur aliquid dolor? Nostrum enim sit veritatis,
+                  repudiandae quas inventore ullam provident minima corrupti.
+                  Est accusamus voluptate, explicabo, molestiae amet
+                  consequuntur laborum, sit earum odio atque rerum nam esse in
+                  ipsum. Quaerat ipsam, saepe distinctio quos dolores quis atque
+                  in cumque quae nobis nisi! Culpa officiis delectus ipsum,
+                  iusto recusandae ut mollitia nostrum tempora facere iure
+                  sapiente nobis animi, commodi aspernatur et, ex in fugit
+                  inventore sed expedita. Magnam et nulla tempore excepturi
+                  aspernatur! Excepturi accusamus, alias sint assumenda fugit
+                  vel impedit consectetur vitae praesentium ratione odio itaque
+                  sit eveniet labore suscipit sapiente corporis minus cum natus
+                  pariatur ipsam maxime repellendus deleniti fugiat. Eum.
                 </p>
-                <button class="description-button show" onclick="togleView()">
+                <button class="show-content" onclick="togleView()">
                   Show More
                 </button>
               </div>
               <div class="text-block hiden" id="statistics">
                 <p class="content">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
-                  reiciendis magnam ipsam officia excepturi quisquam eum
-                  deserunt praesentium obcaecati fugit? Possimus enim iusto,
-                  molestiae voluptatem harum at neque consequuntur iure. Laborum
-                  veniam debitis sequi animi eligendi atque inventore eveniet
-                  maiores itaque sint tempora magnam tenetur vitae nulla iste
-                  necessitatibus dicta ipsa distinctio culpa, similique
-                  voluptatum! Repellat repellendus numquam ratione tenetur!
+                  Statistic description financial history, sit amet consectetur
+                  adipisicing elit. Id reiciendis magnam ipsam officia excepturi
+                  quisquam eum deserunt praesentium obcaecati fugit? Possimus
+                  enim iusto, molestiae voluptatem harum at neque consequuntur
+                  iure. Laborum veniam debitis sequi animi eligendi atque
+                  inventore eveniet maiores itaque sint tempora magnam tenetur
+                  vitae nulla iste necessitatibus dicta ipsa distinctio culpa,
+                  similique voluptatum! Repellat repellendus numquam ratione
+                  tenetur!
                 </p>
-                <button class="description-button show" onclick="togleView()">
+                <button class="show-content" onclick="togleView()">
                   Show More
                 </button>
               </div>
@@ -191,7 +173,7 @@
                 <div class="linear-graph">
                   <p class="title">charts</p>
                   <div class="graphBlock">
-                    <canvas class="image-graph" width="0" height="0"></canvas>
+                    <canvas class="image-graph"></canvas>
                   </div>
                 </div>
                 <div class="analytics">
@@ -369,11 +351,13 @@
         </div>
       </section>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="./js/descriptionContent.js"></script>
     <script type="module" src="js/activeTableRow.js"></script>
     <script type="module" src="js/linearGraph.js"></script>
+    <script type="module" src="js/dataApi.js"></script>
   </body>
 </html>
