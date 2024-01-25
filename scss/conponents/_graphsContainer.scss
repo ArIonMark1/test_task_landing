@@ -1,15 +1,16 @@
 .graphs-block {
   position: relative;
-  width: 100%;
+  max-width: 100%;
   padding: 8px 0;
   display: flex;
   gap: 5px;
   .content {
     flex-basis: calc((100% - 10px) / 2);
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    // border: 1px solid teal;
+    border: 1px solid teal;
     .title {
       margin: 0;
       padding: 8px;
@@ -28,7 +29,7 @@
     }
     .linear-graph {
       width: 100%;
-      //   padding: 8px;
+      padding: 8px;
       background-color: $block-color;
       border-radius: 4px;
       //   border: 1px solid rebeccapurple;
@@ -47,6 +48,7 @@
       }
     }
     .analytics {
+      flex: 1;
       background-color: $block-color;
       border-radius: 4px;
       //   border: 1px solid olivedrab;
@@ -54,7 +56,7 @@
         width: 100%;
         border-bottom: 1px solid $hover-block-color;
         .recommendations {
-          //   padding: 8px;
+          padding: 8px;
           .detal-info {
             display: flex;
             flex-direction: row;
@@ -64,12 +66,13 @@
             .indicator {
               padding: 0;
               max-width: 100%;
+              flex: 1;
               min-height: 100%;
               border: 1px solid mediumpurple;
             }
             .position-list {
               border: 1px solid tomato;
-              width: 100%;
+              display: flex;
               .list-colors {
                 .block-color {
                   display: flex;
@@ -111,8 +114,9 @@
           border: 1px solid palevioletred;
           .image-graph {
             background-color: #454545;
-            min-width: 100%;
-            min-height: 166px;
+            width: auto;
+            max-width: 100%;
+            // min-height: 166px;
             border: 1px solid maroon;
           }
         }

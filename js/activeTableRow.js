@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const table = document.getElementById("styledTable");
+  const table = document.querySelector(".table");
   const rows = table.querySelectorAll(".row");
 
   rows.forEach((row) => {

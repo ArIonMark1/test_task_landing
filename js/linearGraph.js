@@ -1,3 +1,7 @@
+// import { getPrice } from "./dataApi";
+import * as ApiRequest from "./dataApi";
+const dataApi = new ApiRequest();
+console.log(dataApi);
 const canvas = window.document.querySelector(".image-graph");
 
 const context = canvas.getContext("2d");
