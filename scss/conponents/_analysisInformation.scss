@@ -137,7 +137,8 @@
           }
         }
         .active {
-          border: 1px solid $strong-buy-color; /* Зелений бордер для активного рядка */
+          // border-bottom: transparent;
+          outline: 1px solid $strong-buy-color; /* Зелений бордер для активного рядка */
           border-radius: 4px;
         }
       }

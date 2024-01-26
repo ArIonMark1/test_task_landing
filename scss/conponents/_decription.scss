@@ -1,5 +1,10 @@
 .description-menu {
   //   border: 1px solid thistle;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $hover-block-color;
+  @media screen and (min-width: 768px) {
+    // padding: 12px 0;
+  }
 
   .menu-buttons {
     padding-bottom: 8px;
@@ -33,11 +38,17 @@
     }
   }
   .text-block {
-    border-bottom: 1px solid $hover-block-color;
-    padding: 8px 0;
+    position: relative;
+    padding-top: 8px;
+    margin-bottom: 8px;
+    height: 70px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    width: 100%;
     text-align: left;
     @media screen and (min-width: 768px) {
-      padding: 12px 0;
+      padding-top: 12px;
+      margin-bottom: 12px;
     }
 
     .content {
@@ -45,35 +56,37 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
       overflow: hidden;
-      height: 60px;
-
       margin: 0;
       max-width: 100%;
       font-size: 12px;
       line-height: 1.6;
       text-align: left;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
     }
-    .show-content {
-      padding: 5px 10px;
-      border: none;
+    .content.open {
+      -webkit-line-clamp: inherit;
+    }
+  }
+  .text-block.active {
+    height: auto;
+  }
+  .show-content {
+    padding: 5px 10px;
+    border: none;
+    outline: 1px solid $hover-block-color;
+    color: $green-text-color;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center;
+    background: transparent;
+    font-size: 10px;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    transition: color $cubic-animation;
+    &:hover,
+    &:focus,
+    &:active {
       outline: 1px solid $hover-block-color;
       color: $green-text-color;
-      border-radius: 4px;
-      cursor: pointer;
-      align-items: center;
-      background: transparent;
-      font-size: 10px;
-      line-height: normal;
-      letter-spacing: 0.2px;
-      transition: color $cubic-animation;
-      &:hover,
-      &:focus,
-      &:active {
-        outline: 1px solid $hover-block-color;
-        color: $green-text-color;
-      }
     }
   }
   .hiden {
