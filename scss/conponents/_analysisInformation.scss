@@ -27,7 +27,6 @@
     overflow: hidden;
     border-radius: 4px;
     background-color: $block-color;
-    // border: 1px solid mediumorchid;
     .table {
       width: 100%;
       .table-header {
@@ -56,7 +55,6 @@
               font-size: 10px;
               min-width: max-content;
             }
-            // border: 1px solid $strong-buy-color;
             &:first-child {
               flex: 2;
               text-align: left;
@@ -107,7 +105,6 @@
               text-transform: uppercase;
               color: $strong-buy-color;
               @media screen and (min-width: 1024px) {
-                // width: 30px;
                 padding-right: 12px;
                 font-size: 12px;
               }
@@ -137,7 +134,6 @@
           }
         }
         .active {
-          // border-bottom: transparent;
           outline: 1px solid $strong-buy-color; /* Зелений бордер для активного рядка */
           border-radius: 4px;
         }

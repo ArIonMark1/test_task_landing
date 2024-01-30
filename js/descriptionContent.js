@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const listButtons = document.querySelector(".menu-buttons");
-  const showContentButton = document.querySelector(".show-content");
 
   // ----------------------------------------------------------------
   listButtons.addEventListener("click", showContentBlock);
-  showContentButton.addEventListener("click", openBlockContent);
   // ----------------------------------------------------------------
 
   function showContentBlock(evt) {
@@ -33,62 +31,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // #################################################################
   // #################################################################
+  // const showContentButton = document.querySelector(".show-content");
+  // showContentButton.addEventListener("click", openBlockContent);
 
-  function openBlockContent(evt) {
-    // вибираю активний блок, який відображається на екрані
-    const currentContentBlock = document.querySelector(
-      ".text-block:not(.hiden)"
-    );
-    // ----------------------------------------------------------------
-    // беру поточне значення висоти блоку
-    const styles = window.getComputedStyle(currentContentBlock);
-    const height = styles.getPropertyValue("height");
+  // function openBlockContent(evt) {
+  //   // вибираю активний блок, який відображається на екрані
+  //   const currentContentBlock = document.querySelector(
+  //     ".text-block:not(.hiden)"
+  //   );
+  //   // ----------------------------------------------------------------
 
-    if (height === "70px") {
-      // якщо висота 70 при клікі на кнопку
-      //додаю клас open до блоку контента content
-      // змінюю контент кнопки на "Show Less"
-      // ----------------------------------------
-      currentContentBlock.children[0].classList.add("open");
-      showContentButton.innerHTML = "Show Less";
-      // ----------------------------------------------------------------
-      // ----------------------------------------------------------------
-      if (currentContentBlock.children[0].classList.contains("open")) {
-        console.log(currentContentBlock.children[0].classList);
-        currentContentBlock.classList.add("active");
-      }
-      currentContentBlock.style.height = "auto";
-    } else {
-      // якщо висотабільша за 70 при клікі на кнопку
-      //видаляю клас "open" до блоку контента "content"
-      // змінюю контент кнопки на "Show More"
-      // -----------------------------------------
-      currentContentBlock.children[0].classList.remove("open");
-      showContentButton.innerHTML = "Show More";
-      // ----------------------------------------------------------------
-      // ----------------------------------------------------------------
-      currentContentBlock.classList.remove("active");
-      currentContentBlock.style.height = "70px";
-    }
-  }
-
+  //   currentContentBlock.children[0].classList.toggle("open");
+  //   currentContentBlock.classList.toggle("active");
+  //   // ----------------------------------------------------------------
+  //   currentContentBlock.classList.contains("active")
+  //     ? (showContentButton.innerHTML = "Show Less")
+  //     : (showContentButton.innerHTML = "Show More");
+  // }
   // #################################################################
   // #################################################################
-
-  //   var openButton = document.getElementsByClassName("show-content");
-  //   var i;
-
-  //   openButton.addEventListener("click", () => {});
-
-  //   for (i = 0; i < acc.length; i++) {
-  //     acc[i].addEventListener("click", function () {
-  //       this.classList.toggle("active");
-  //       var panel = this.nextElementSibling;
-  //       if (panel.style.maxHeight) {
-  //         panel.style.maxHeight = null;
-  //       } else {
-  //         panel.style.maxHeight = panel.scrollHeight + "px";
-  //       }
-  //     });
-  //   }
 });
